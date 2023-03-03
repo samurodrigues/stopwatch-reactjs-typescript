@@ -3,12 +3,13 @@ import style from './Botao.module.scss';
 
 interface IProps {
     children: React.ReactNode;
+    type?: "button" | "submit" | "reset" | undefined;
 }
 
-class Botao extends React.Component <IProps>{
+class Botao extends React.Component <IProps,{type?: string}>{
     render() {
         return(
-            <button className={style.botao}>
+            <button type={this.props.type} className={style.botao}>
                 {this.props.children}
             </button>
         )
